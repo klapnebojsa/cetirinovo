@@ -23,7 +23,8 @@
    'k', 'e', 'r', 'n', 'e', 'l', '!', '!', '!', '\\0');\n}\n"
       ]
   (try
-    (with-release [dev (first (devices (first (platforms))))
+    (with-release [devs (devices (first (platforms))) 
+                   dev (first devs)
                    ctx (context [dev])
                    cqueue (command-queue ctx dev)
                    cl-msg (cl-buffer ctx 16 :write-only)
